@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 240 10% 4%;
+  --border: 240 6% 90%;
+  --muted: 240 5% 96%;
+  --accent: 262 83% 58%;
+  --accent-foreground: 0 0% 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    --border: 240 4% 16%;
+    --muted: 240 4% 10%;
+    --accent: 263 70% 65%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
+
+/* Subtle gradient mesh background */
+.gradient-mesh {
+  background-image:
+    radial-gradient(at 40% 20%, hsl(263 70% 65% / 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsl(220 70% 50% / 0.06) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, hsl(263 60% 70% / 0.05) 0px, transparent 50%);
+}
+
+.dark .gradient-mesh {
+  background-image:
+    radial-gradient(at 40% 20%, hsl(263 70% 65% / 0.12) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, hsl(220 70% 50% / 0.08) 0px, transparent 50%);
+}
+
+/* Download section: subtle gradient shift */
+.download-section-bg {
+  background: linear-gradient(
+    135deg,
+    hsl(263 70% 65% / 0.05) 0%,
+    hsl(220 70% 50% / 0.04) 50%,
+    hsl(263 70% 65% / 0.05) 100%
+  );
+  background-size: 200% 200%;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .download-section-bg {
+    animation: download-gradient 12s ease-in-out infinite;
+  }
+}
+@keyframes download-gradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
