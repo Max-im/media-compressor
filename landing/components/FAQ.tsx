@@ -1,6 +1,7 @@
 'use client';
 
 import { StaggerContainer, StaggerItem } from '@/components/animations';
+import { staggerMedium } from '@/components/animations/motion-config';
 
 const faqs = [
   {
@@ -32,7 +33,7 @@ export function FAQ() {
       aria-labelledby="faq-heading"
     >
       <div className="mx-auto max-w-3xl">
-        <StaggerContainer className="space-y-3">
+        <StaggerContainer className="space-y-3" staggerDelay={staggerMedium}>
           <StaggerItem>
             <h2
               id="faq-heading"
@@ -42,7 +43,7 @@ export function FAQ() {
             </h2>
           </StaggerItem>
         </StaggerContainer>
-        <StaggerContainer className="mt-12 space-y-8" staggerDelay={0.06}>
+        <StaggerContainer className="mt-12 space-y-8" staggerDelay={staggerMedium}>
           {faqs.map((faq) => (
             <StaggerItem key={faq.question}>
               <div className="rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] p-6 shadow-sm">

@@ -1,6 +1,7 @@
 'use client';
 
 import { StaggerContainer, StaggerItem } from '@/components/animations';
+import { staggerMedium } from '@/components/animations/motion-config';
 
 const steps = [
   {
@@ -30,7 +31,7 @@ export function HowItWorks() {
       aria-labelledby="how-it-works-heading"
     >
       <div className="mx-auto max-w-7xl">
-        <StaggerContainer className="space-y-3">
+        <StaggerContainer className="space-y-3" staggerDelay={staggerMedium}>
           <StaggerItem>
             <h2
               id="how-it-works-heading"
@@ -45,7 +46,7 @@ export function HowItWorks() {
             </p>
           </StaggerItem>
         </StaggerContainer>
-        <StaggerContainer className="mt-16 grid gap-10 sm:grid-cols-3">
+        <StaggerContainer className="mt-16 grid gap-10 sm:grid-cols-3" staggerDelay={staggerMedium}>
           {steps.map((step) => (
             <StaggerItem key={step.number}>
               <div className="text-center">

@@ -1,6 +1,7 @@
 'use client';
 
 import { StaggerContainer, StaggerItem } from '@/components/animations';
+import { staggerMedium } from '@/components/animations/motion-config';
 
 const formatGroups = [
   {
@@ -24,7 +25,7 @@ export function SupportedFormats() {
       aria-labelledby="formats-heading"
     >
       <div className="mx-auto max-w-7xl">
-        <StaggerContainer className="space-y-3">
+        <StaggerContainer className="space-y-3" staggerDelay={staggerMedium}>
           <StaggerItem>
             <h2
               id="formats-heading"
@@ -39,7 +40,7 @@ export function SupportedFormats() {
             </p>
           </StaggerItem>
         </StaggerContainer>
-        <StaggerContainer className="mt-16 flex flex-wrap justify-center gap-8 lg:gap-16">
+        <StaggerContainer className="mt-16 flex flex-wrap justify-center gap-8 lg:gap-16" staggerDelay={staggerMedium}>
           {formatGroups.map((group) => (
             <StaggerItem key={group.category}>
               <div className="text-center">
