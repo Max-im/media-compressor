@@ -5,6 +5,7 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { Benefits } from '@/components/Benefits';
 import { SupportedFormats } from '@/components/SupportedFormats';
 import { Screenshots } from '@/components/Screenshots';
+import { Demo } from '@/components/Demo';
 import { Download } from '@/components/Download';
 import { FAQ } from '@/components/FAQ';
 import { Footer } from '@/components/Footer';
@@ -21,6 +22,7 @@ export default function Home() {
         <Benefits />
         <SupportedFormats />
         <Screenshots />
+        <Demo />
         <Download />
         <FAQ />
       </main>
