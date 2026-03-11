@@ -40,14 +40,6 @@ export function Footer() {
                 GitHub
               </a>
             </li>
-            <li>
-              <a
-                href={`${GITHUB_URL}/blob/main/LICENSE`}
-                className="text-sm text-[hsl(var(--foreground))]/70 hover:text-[hsl(var(--foreground))] underline focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))] focus:ring-offset-2 rounded"
-              >
-                License
-              </a>
-            </li>
           </ul>
         </nav>
       </div>
