@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
 
@@ -33,9 +34,16 @@ export function Header() {
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between px-6 sm:px-8 lg:px-12">
         <Link
           href="/"
-          className="text-lg font-semibold text-[hsl(var(--foreground))] hover:opacity-80 transition-opacity"
+          className="flex items-center gap-2 text-lg font-semibold text-[hsl(var(--foreground))] hover:opacity-80 transition-opacity"
         >
-          Media Compressor
+          <Image
+            src="/favicon.ico"
+            alt=""
+            width={28}
+            height={28}
+            className="shrink-0"
+          />
+          <span>Media Compressor</span>
         </Link>
 
         {/* Desktop nav */}
