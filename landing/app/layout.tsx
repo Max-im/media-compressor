@@ -41,6 +41,9 @@ export const metadata: Metadata = {
   },
   robots: 'index, follow',
   metadataBase: new URL('https://max-im.github.io/media-compressor'),
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

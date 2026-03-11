@@ -48,7 +48,7 @@ export function Features() {
 
   return (
     <section
-      className="px-6 py-20 sm:px-8 lg:px-12 lg:py-28"
+      className="relative overflow-hidden px-6 py-20 sm:px-8 lg:px-12 lg:py-28 features-section-bg"
       aria-labelledby="features-heading"
     >
       <div className="mx-auto max-w-7xl">

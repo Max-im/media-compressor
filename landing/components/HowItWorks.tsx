@@ -13,7 +13,7 @@ const steps = [
     number: '2',
     title: 'Choose compression settings',
     description:
-      'Adjust quality and format options. Presets for common use cases.',
+      'Adjust quality and compression options. Presets for common use cases.',
   },
   {
     number: '3',

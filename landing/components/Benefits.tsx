@@ -39,12 +39,12 @@ export function Benefits() {
               id="benefits-heading"
               className="text-3xl font-semibold tracking-tight text-[hsl(var(--foreground))] sm:text-4xl text-center"
             >
-              Why desktop beats online
+              Why Media Compressor
             </h2>
           </StaggerItem>
           <StaggerItem>
             <p className="mx-auto max-w-2xl text-center text-[hsl(var(--foreground))]/70 text-lg">
-              Compared to browser-based compressors, you get more control and peace of mind.
+              Simple, private, and fast compression on your device.
             </p>
           </StaggerItem>
         </StaggerContainer>
