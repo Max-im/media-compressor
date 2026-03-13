@@ -6,7 +6,7 @@ import { HowItWorks } from '@/components/HowItWorks';
 import { WhyDesktop } from '@/components/WhyDesktop';
 import { Benefits } from '@/components/Benefits';
 import { SupportedFormats } from '@/components/SupportedFormats';
-import { Screenshots } from '@/components/Screenshots';
+// import { Screenshots } from '@/components/Screenshots';
 import { Testimonials } from '@/components/Testimonials';
 import { Demo } from '@/components/Demo';
 import { Download } from '@/components/Download';
@@ -26,7 +26,7 @@ export default function Home() {
         <WhyDesktop />
         <Benefits />
         <SupportedFormats />
-        <Screenshots />
+        {/* <Screenshots /> */}
         <Testimonials />
         <Demo />
         <Download />

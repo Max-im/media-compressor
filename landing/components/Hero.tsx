@@ -24,7 +24,7 @@ export function Hero() {
 
   return (
     <section
-      className="relative overflow-hidden gradient-mesh px-6 pt-16 pb-24 sm:px-8 lg:px-12 lg:pt-24 lg:pb-32"
+      className="relative flex min-h-screen min-h-[100dvh] flex-col justify-center overflow-hidden gradient-mesh px-6 pt-16 pb-24 sm:px-8 lg:px-12 lg:pt-24 lg:pb-32"
       aria-labelledby="hero-heading"
     >
       <div className="mx-auto max-w-7xl">
@@ -88,13 +88,13 @@ export function Hero() {
                 prefersReducedMotion
                   ? undefined
                   : {
-                      y: [0, -8, 0],
-                      transition: {
-                        duration: 4,
-                        repeat: Infinity,
-                        ease: 'easeInOut',
-                      },
-                    }
+                    y: [0, -8, 0],
+                    transition: {
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: 'easeInOut',
+                    },
+                  }
               }
             >
               <div className="absolute inset-0 flex flex-col">
@@ -105,7 +105,7 @@ export function Hero() {
                 </div>
                 <div className="flex flex-1 items-center justify-center p-8">
                   <div className="rounded-lg border-2 border-dashed border-[hsl(var(--foreground))]/20 bg-[hsl(var(--background))]/50 px-8 py-6 text-center text-[hsl(var(--foreground))]/50 text-sm">
-                    Drag and drop files here
+                    Check out the demo video below
                   </div>
                 </div>
               </div>
