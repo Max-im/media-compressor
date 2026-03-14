@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
-const basePath = process.env.NODE_ENV === 'production' ? '/media-compressor' : '';
+// Only set basePath when building for GitHub Pages (see deploy script). Leave unset for local dev/serve.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const nextConfig = {
   output: 'export',
   basePath,
-  // Match basePath exactly so client-side chunk resolution uses the same prefix (no trailing slash).
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/media-compressor' : '',
+  assetPrefix: basePath,
   images: {
     unoptimized: true,
   },

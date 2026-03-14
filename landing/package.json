@@ -7,7 +7,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "deploy": "next build && npx gh-pages -d out"
+    "build:gh": "cross-env NEXT_PUBLIC_BASE_PATH=/media-compressor next build",
+    "deploy": "npm run build:gh && npx gh-pages -d out -t --nojekyll"
   },
   "dependencies": {
     "framer-motion": "^11.0.0",
@@ -16,6 +17,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "@types/node": "^20.0.0",
     "@types/react": "^18.2.0",
     "@types/react-dom": "^18.2.0",

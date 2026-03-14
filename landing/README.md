@@ -2,6 +2,8 @@
 
 A modern, production-quality landing page for the Media Compressor desktop app. Built with Next.js (App Router), TypeScript, and Tailwind CSS. Static export–compatible for deployment to GitHub Pages.
 
+**Repo structure:** The repository root contains `app/` and `landing/`. This README and all commands below refer to the **landing** folder. Always run `npm run deploy`, `npm run build`, etc. from inside `landing/` (e.g. `cd landing` first from the repo root).
+
 ## Tech stack
 
 - **Next.js 14** (App Router)
@@ -41,17 +43,31 @@ The project is set up for GitHub Pages under the repository path (e.g. `https://
 
 ### Option 1: Deploy with gh-pages
 
+From the **repository root**:
+
+```bash
+cd landing
+npm run deploy
+```
+
+From inside `landing/`:
+
 ```bash
 npm run deploy
 ```
 
-This runs `next build` and then publishes the `out/` folder to the `gh-pages` branch. In the repo **Settings → Pages**, set the source to the `gh-pages` branch.
+This runs a **GitHub Pages build** (with `NEXT_PUBLIC_BASE_PATH=/media-compressor`), then publishes the contents of `out/` to the root of the `gh-pages` branch. The site is served at `https://max-im.github.io/media-compressor/`.
+
+**Two build modes:**
+- **Local** — `npm run build` (no base path). Use with `npx serve out` and open `http://localhost:3000/`.
+- **GitHub Pages** — `npm run deploy` (runs `build:gh` then pushes with `-t --nojekyll`). The `-t` flag includes dotfiles (e.g. `.nojekyll`); `--nojekyll` disables Jekyll so the `_next` folder is published (Jekyll ignores underscore-prefixed paths). In the repo **Settings → Pages**, set the source to the `gh-pages` branch.
 
 **If assets (JS/CSS) return 404 after deploy:**
 
-1. Open the site at **exactly** `https://max-im.github.io/media-compressor/` (with `/media-compressor/` in the URL). Opening the repo root or another path will break asset resolution.
-2. In **Settings → Pages**, ensure the source is the **gh-pages** branch (root), not `main` or `/docs`.
-3. Run a clean deploy: `npm run build` then `npx gh-pages -d out`, and do a hard refresh (Ctrl+Shift+R / Cmd+Shift+R) to avoid cached HTML.
+1. **`.nojekyll`** — The repo includes `public/.nojekyll`. It is copied to `out/` on build and tells GitHub Pages *not* to use Jekyll. Jekyll ignores folders whose names start with `_`, so without `.nojekyll` the `_next` folder would never be published and all chunk requests would 404. Do not remove it.
+2. Open the site at **exactly** `https://max-im.github.io/media-compressor/` (with `/media-compressor/` in the URL). Opening the repo root or another path will break asset resolution.
+3. In **Settings → Pages**, ensure the source is the **gh-pages** branch (root), not `main` or `/docs`.
+4. Run a clean deploy: `npm run build` then `npx gh-pages -d out`, and do a hard refresh (Ctrl+Shift+R / Cmd+Shift+R) to avoid cached HTML.
 
 ### Option 2: GitHub Actions
 
