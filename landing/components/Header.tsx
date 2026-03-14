@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 const GITHUB_URL = 'https://github.com/max-im/media-compressor';
 const DOWNLOAD_URL = 'https://github.com/max-im/media-compressor/releases';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,7 +38,7 @@ export function Header() {
           className="flex items-center gap-2 text-lg font-semibold text-[hsl(var(--foreground))] hover:opacity-80 transition-opacity"
         >
           <Image
-            src="/favicon.ico"
+            src={`${basePath}/favicon.ico`}
             alt=""
             width={28}
             height={28}

@@ -47,6 +47,12 @@ npm run deploy
 
 This runs `next build` and then publishes the `out/` folder to the `gh-pages` branch. In the repo **Settings → Pages**, set the source to the `gh-pages` branch.
 
+**If assets (JS/CSS) return 404 after deploy:**
+
+1. Open the site at **exactly** `https://max-im.github.io/media-compressor/` (with `/media-compressor/` in the URL). Opening the repo root or another path will break asset resolution.
+2. In **Settings → Pages**, ensure the source is the **gh-pages** branch (root), not `main` or `/docs`.
+3. Run a clean deploy: `npm run build` then `npx gh-pages -d out`, and do a hard refresh (Ctrl+Shift+R / Cmd+Shift+R) to avoid cached HTML.
+
 ### Option 2: GitHub Actions
 
 1. Create `.github/workflows/deploy.yml` in the **repository root** (not inside `landing/`), for example:

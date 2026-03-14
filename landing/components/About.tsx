@@ -4,6 +4,8 @@ import { useRef, useState, useEffect } from 'react';
 import { StaggerContainer, StaggerItem } from '@/components/animations';
 import { staggerMedium } from '@/components/animations/motion-config';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export function About() {
   const imageRef = useRef<HTMLDivElement>(null);
   const [imageInView, setImageInView] = useState(false);
@@ -33,13 +35,13 @@ export function About() {
             className="w-full lg:w-1/2 flex-shrink-0 relative min-h-[200px] lg:min-h-[280px]"
           >
             <img
-              src="/blob.svg"
+              src={`${basePath}/blob.svg`}
               alt=""
               aria-hidden
               className={`w-full ${imageInView ? 'about-blob in-view' : 'about-blob'}`}
             />
             <img
-              src="/character.svg"
+              src={`${basePath}/character.svg`}
               alt="Team working together"
               className={imageInView ? 'about-character in-view' : 'about-character'}
             />

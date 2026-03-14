@@ -42,7 +42,8 @@ export const metadata: Metadata = {
   robots: 'index, follow',
   metadataBase: new URL('https://max-im.github.io/media-compressor'),
   icons: {
-    icon: '/favicon.ico',
+    // basePath not applied to metadata icons by Next.js — use path that works under /media-compressor
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/favicon.ico`,
   },
 };
 
